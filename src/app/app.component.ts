@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CharactersComponent } from './characters/characters/characters.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

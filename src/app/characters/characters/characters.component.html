@@ -1,42 +1,41 @@
-<h2>characters works!</h2>
-
-<h2>Total Resultados: {{totalResults}}</h2>
-
 <div>
+    <mat-tab-group>
+        <mat-tab label="Characters">
+            <h2>Total Resultados: {{responseGlobant.total}}</h2>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <div>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
 
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
 
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
+                    <ng-container matColumnDef="description" >
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                    </ng-container>
 
-        <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-        </ng-container>
+                    <ng-container matColumnDef="image">
+                        <th mat-header-cell *matHeaderCellDef> Image </th>
+                        <td mat-cell *matCellDef="let element"> {{element.image.path}} </td>
+                    </ng-container>
 
-        <ng-container matColumnDef="details">
-            <th mat-header-cell *matHeaderCellDef> Comics </th>
-            <td mat-cell *matCellDef="let element">
-                <button mat-flat-button mat-button (click)="openDialogDetails()">Details</button>
-            </td>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row (click)="openDialogDetails(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
 
-        </ng-container>
+        </mat-tab>
 
-        <ng-container matColumnDef="image">
-            <th mat-header-cell *matHeaderCellDef> Image </th>
-            <td mat-cell *matCellDef="let element"> {{element.image}} </td>
-        </ng-container>
+        <mat-tab label="History"> Historial de consultas
+            <h2>History</h2>
+        </mat-tab>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    </table>
-
+        <mat-tab label="Test"> Test </mat-tab>
+    </mat-tab-group>
 </div>
