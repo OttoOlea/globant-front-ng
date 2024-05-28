@@ -25,3 +25,7 @@
 ## Further help
 
     To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Evidence
+
+<span>![</span><span>Total of records retrieved from the api</span><span>]</span><span>(</span><span>https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/total_records_characters.png</span><span>)</span>
