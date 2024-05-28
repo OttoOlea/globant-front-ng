@@ -5,23 +5,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { PopUpDetailDialogComponent } from '../../pop-up-character/pop-up-detail-dialog/pop-up-detail-dialog.component';
 import { ApiGlobantService } from '../../service/api-globant.service';
+import { HistoryComponent } from '../../history/history/history.component';
 //import { CallApiMarvelService } from '../services/call-api-marvel.service';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  description: string;
-  image: string;
-}
-
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [MatDividerModule, MatTableModule, MatTabsModule],
+  imports: [MatDividerModule, MatTableModule, MatTabsModule, HistoryComponent],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
@@ -33,7 +23,6 @@ export class CharactersComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'description'];
   dataSource = [];
-  clickedRows = new Set<PeriodicElement>();
 
   constructor(
     private apiGlobantService: ApiGlobantService,

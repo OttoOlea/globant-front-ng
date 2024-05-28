@@ -3,9 +3,11 @@ div {
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 90%;
+    width: 1900px;
     border-radius: 1em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    max-width: 90%;
 }
 
 table {
@@ -15,7 +17,6 @@ table {
 
 table,
 th {
-    width: 10%;
     margin-right: 15%;
 }
 
@@ -29,6 +30,10 @@ th {
     border-color: currentColor;
 }
 
-.demo-row-is-clicked {
-    font-weight: bold;
+.mat-column-id .mat-column-action {
+    max-width: 5px;
+}
+
+.mat-column-date .mat-column-detail {
+    max-width: 10px;
 }
