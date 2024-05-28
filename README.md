@@ -28,4 +28,12 @@
 
 ## Evidence
 
-<span>![</span><span>Total of records retrieved from the api</span><span>]</span><span>(</span><span>https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/total_records_characters.png</span><span>)</span>
+![Total of records retrieved from the api](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/total_records_characters.png)
+
+![Pop-up when is clecked an charecter](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/pop_up_chracter.png)
+
+![Total of records from history of consults](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/total_records_history.png)
+
+![Table History](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/db_h2.png)
+
+![Total of records in H2 Database](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/total_records_h2.png)
