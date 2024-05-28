@@ -2,6 +2,13 @@
 
     This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
+### Important
+A mock was used to simulate the back and be able to recover the data and populate the tables in the Front
+
+![Error the import of the dependency](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/error_compile_back.png)
+
+![Maven dependency in the Globant-Api](https://github.com/OttoOlea/globant-front-ng/blob/main/src/assets/maven_dependencie_back.png)
+
 ## Development server
 
     Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
