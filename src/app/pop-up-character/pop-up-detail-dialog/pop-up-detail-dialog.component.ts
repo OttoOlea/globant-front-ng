@@ -25,6 +25,7 @@ export class PopUpDetailDialogComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name'];
   dataSource = [];
   dataSourceSerie = [];
+  responseCharacter: any = {};
 
   character: Character = {
     id: 0,
@@ -47,22 +48,30 @@ export class PopUpDetailDialogComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.character = {
-      id: this.data.id,
-      name: this.data.name,
-      description: this.data.description,
-      image: {
-        path: this.data.image.path,
-        extension: this.data.image.extension
-      },
-      series: this.data.series,
-      comics: this.data.comics
-    }
+    this.apiGlobantService.getCharacterByID(this.data.id)
+      .subscribe(data => {
+        console.log("DataResult: ", data)
 
-    this.dataSource = this.data.listComics;
-    this.dataSourceSerie = this.data.listSeries;
+        this.responseCharacter = data.resultList[0]
 
-    //this.apiGlobantService.getCharacterByID(this.data);
+        this.character = {
+          id: this.responseCharacter.id,
+          name: this.responseCharacter.name,
+          description: this.responseCharacter.description,
+          image: {
+            path: this.responseCharacter.image.path,
+            extension: this.responseCharacter.image.extension
+          },
+          series: this.responseCharacter.series,
+          comics: this.responseCharacter.comics
+        }
+
+        this.dataSource = this.responseCharacter.listComics;
+        this.dataSourceSerie = this.responseCharacter.listSeries;
+
+      }, error => {
+        console.log('Error-HttpClient: ', error)
+      });
 
   }
 

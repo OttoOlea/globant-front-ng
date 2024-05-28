@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import { ApiGlobantService } from '../../service/api-globant.service';
 
 @Component({
   selector: 'app-history',
@@ -11,18 +11,24 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class HistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'action', 'date', 'detail'];
-  dataSource = [
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-    { id: 1, action: 'INSERT', date: '12/12/2024T00:00:00', detail: 'insert for SQL' },
-  ];
+  constructor(
+    private apiGlobantService: ApiGlobantService
+  ) {
+
+  }
+
+  displayedColumns: string[] = ['id', 'action', 'date', 'details'];
+  dataSource = [];
 
   ngOnInit(): void {
+
+    this.apiGlobantService.getHistory()
+      .subscribe(data => {
+        console.log(data);
+
+        this.dataSource = data;
+
+      })
 
   }
 
