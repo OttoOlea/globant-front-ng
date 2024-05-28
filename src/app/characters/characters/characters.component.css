@@ -1,7 +1,21 @@
+div {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 90%;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 table {
-    width: 70%;
-    margin-left: 2%;
-    margin-right: 2%;
+    border-collapse: collapse;
+    border-radius: 2em;
+}
+
+table,
+th {
+    width: 20%;
 }
 
 .mat-mdc-row .mat-mdc-cell {

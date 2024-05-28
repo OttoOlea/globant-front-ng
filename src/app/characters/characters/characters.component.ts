@@ -5,8 +5,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { PopUpDetailDialogComponent } from '../../pop-up-character/pop-up-detail-dialog/pop-up-detail-dialog.component';
 import { ApiGlobantService } from '../../service/api-globant.service';
-import { HttpClient } from '@angular/common/http';
-import { Character, ResponseGlobant } from '../../dto/Response';
 //import { CallApiMarvelService } from '../services/call-api-marvel.service';
 
 export interface PeriodicElement {
@@ -33,7 +31,7 @@ export class CharactersComponent implements OnInit {
   responseGlobant: any;
   jsonResponse: any;
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'image'];
+  displayedColumns: string[] = ['id', 'name', 'description'];
   dataSource = [];
   clickedRows = new Set<PeriodicElement>();
 
